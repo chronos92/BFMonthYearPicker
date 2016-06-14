@@ -21,24 +21,24 @@ public class BFMonthYearPicker : UIPickerView {
             pickerDelegate.maxDateSelected = maxDate
         }
     }
-    var minDate : NSDate?
-    var initDate : NSDate = NSDate() {
+    public var minDate : NSDate?
+    public var initDate : NSDate = NSDate() {
         didSet {
             reloadAllComponents()
             pickerDelegate.selectDate(initDate)
         }
     }
     
-    var currentDate : NSDate = NSDate()
+    public var currentDate : NSDate = NSDate()
     
-    var pickerType : BFMonthYearPickerType = .MonthYear {
+    public var pickerType : BFMonthYearPickerType = .MonthYear {
         didSet {
             reloadAllComponents()
             pickerDelegate.selectDate(initDate)
         }
     }
     
-    init() {
+    public init() {
         super.init(frame: CGRectZero)
         self.pickerDelegate = BFMonthYearPickerDelegate(object: self)
         delegate = pickerDelegate
