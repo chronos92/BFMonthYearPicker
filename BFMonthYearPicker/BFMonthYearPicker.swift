@@ -22,7 +22,7 @@ public class BFMonthYearPicker : UIPickerView {
         }
     }
     public var minDate : NSDate?
-    public var initDate : NSDate = NSDate() {
+    public var initDate : NSDate {
         didSet {
             reloadAllComponents()
             pickerDelegate.selectDate(initDate)
@@ -39,12 +39,14 @@ public class BFMonthYearPicker : UIPickerView {
     }
     
     public init() {
+        initDate = NSDate()
         super.init(frame: CGRectZero)
         self.pickerDelegate = BFMonthYearPickerDelegate(object: self)
         delegate = pickerDelegate
     }
     
     required public init?(coder aDecoder: NSCoder) {
+        initDate = NSDate()
         super.init(coder: aDecoder)
         pickerDelegate = BFMonthYearPickerDelegate(object: self)
         delegate = pickerDelegate
