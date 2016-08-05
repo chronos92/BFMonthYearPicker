@@ -38,8 +38,8 @@ public class BFMonthYearPicker : UIPickerView {
         }
     }
     
-    public init(initDate : NSDate) {
-        self.initDate = initDate
+    public init() {
+        self.initDate = NSDate()
         super.init(frame: CGRectZero)
         self.pickerDelegate = BFMonthYearPickerDelegate(object: self)
         delegate = pickerDelegate
@@ -71,7 +71,7 @@ internal class BFMonthYearPickerDelegate : NSObject, UIPickerViewDelegate, UIPic
     private var currentMonth : Int { return getComponents(NSDate()).month }
     
     private var calendar : NSCalendar = {
-       let cal = NSCalendar.currentCalendar()
+        let cal = NSCalendar.currentCalendar()
         cal.timeZone = NSTimeZone(name: "GMT")!
         return cal
     }()
@@ -94,7 +94,7 @@ internal class BFMonthYearPickerDelegate : NSObject, UIPickerViewDelegate, UIPic
     
     private let disabledTitleAttribute : [String:AnyObject] = [NSForegroundColorAttributeName : UIColor.lightGrayColor()]
     private let enabledTitleAttribute : [String:AnyObject] = [NSForegroundColorAttributeName : UIColor.blackColor()]
-
+    
     private var selectedMonth : Int = 0 {
         didSet {
             let comp = getComponents(picker.currentDate)
@@ -120,7 +120,7 @@ internal class BFMonthYearPickerDelegate : NSObject, UIPickerViewDelegate, UIPic
         let formatter = NSDateFormatter()
         return formatter.monthSymbols
     }()
- 
+    
     init(object : BFMonthYearPicker) {
         years = Array(minYear...maxYear)
         picker = object
@@ -139,7 +139,7 @@ internal class BFMonthYearPickerDelegate : NSObject, UIPickerViewDelegate, UIPic
             selectedYear = getComponents(date).year
             picker.selectRow(selectedYear, inComponent: 0, animated: false)
         }
-//        picker.reloadAllComponents()
+        //        picker.reloadAllComponents()
     }
     
     private func getComponents(date : NSDate) -> NSDateComponents {
