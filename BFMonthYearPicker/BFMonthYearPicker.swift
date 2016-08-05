@@ -38,15 +38,15 @@ public class BFMonthYearPicker : UIPickerView {
         }
     }
     
-    public init() {
-        initDate = NSDate()
+    public init(initDate : NSDate) {
+        self.initDate = initDate
         super.init(frame: CGRectZero)
         self.pickerDelegate = BFMonthYearPickerDelegate(object: self)
         delegate = pickerDelegate
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        initDate = NSDate()
+        self.initDate = NSDate()
         super.init(coder: aDecoder)
         pickerDelegate = BFMonthYearPickerDelegate(object: self)
         delegate = pickerDelegate
