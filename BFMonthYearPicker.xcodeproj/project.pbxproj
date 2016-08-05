@@ -247,6 +247,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = it.borisfalcinelli.BFMonthYearPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -265,6 +266,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = it.borisfalcinelli.BFMonthYearPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Release;
 		};
@@ -287,6 +289,7 @@
 				A11FF31C1D1065030015B134 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
